@@ -7,8 +7,8 @@
 <link href="{{ asset('tilawatipusat/landing/css/bootstrap.css') }}" rel="stylesheet">
 <link href="{{ asset('tilawatipusat/landing/css/style.css') }}" rel="stylesheet">
 <link href="{{ asset('tilawatipusat/landing/css/responsive.css') }}" rel="stylesheet">
-<meta property="og:title" content="Peserta Baru Pendaftaran Diklat"/>
-<meta property="og:description" content="Konfirmasi data peserta baru"/>
+{{-- <meta property="og:title" content="Peserta Baru Pendaftaran Diklat"/>
+<meta property="og:description" content="Konfirmasi data peserta baru"/> --}}
 <meta property="og:image" itemprop="image" content="{{ asset('assets/images/tumb.jpeg') }}">
 @yield('head')
 
