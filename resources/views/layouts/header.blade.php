@@ -7,8 +7,8 @@
 <link href="{{ asset('tilawatipusat/landing/css/bootstrap.css') }}" rel="stylesheet">
 <link href="{{ asset('tilawatipusat/landing/css/style.css') }}" rel="stylesheet">
 <link href="{{ asset('tilawatipusat/landing/css/responsive.css') }}" rel="stylesheet">
-{{-- <meta property="og:title" content="Peserta Baru Pendaftaran Diklat"/>
-<meta property="og:description" content="Konfirmasi data peserta baru"/> --}}
+<meta property="og:title" content="Peserta Baru Pendaftaran Diklat"/>
+<meta property="og:description" content="Konfirmasi data peserta baru"/>
 <meta property="og:image" itemprop="image" content="{{ asset('assets/images/tumb.jpeg') }}">
 @yield('head')
 
@@ -85,7 +85,10 @@
 								<li class="dropdown"><a href="/">Menu</a>
 									<ul>
 										<li>
-											<a href="{{route('seluruh.e_sertifikat')}}">Daftar Seluruh E-Certificate</a>
+											<a href="#">Daftar Seluruh Diklat</a>
+										</li>
+										<li>
+											<a href="#">Daftar Seluruh Webinar</a>
 										</li>
 									</ul>
 								</li>
