@@ -85,6 +85,9 @@
 								<li class="dropdown"><a href="/">Menu</a>
 									<ul>
 										<li>
+											<a href="/">Konfirmasi Data Peserta</a>
+										</li>
+										<li>
 											<a href="{{route('seluruh.diklat')}}">Daftar Semua Diklat</a>
 										</li>
 										<li>
