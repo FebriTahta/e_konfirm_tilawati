@@ -19,7 +19,7 @@ class DiklatCont extends Controller
     {
         if(request()->ajax())
         {
-            $data = Pelatihan::with('program','cabang','peserta');
+            $data = Pelatihan::all();
                      return DataTables::of($data)->make(true)
                         // ->addColumn('peserta', function($data){
                         //         $data2 = Peserta::where('pelatihan_id', $data->id)->where('status',1)->count();
@@ -32,7 +32,7 @@ class DiklatCont extends Controller
                         //     return $data->program->name;
                         // })
                         // ->rawColumns(['cabang'])
-                        ->make(true);
+                        // ->make(true);
             // if(!empty($request->dari))
             // {
             //     $data   = Pelatihan::with('cabang')->with('peserta')->with('program')->orderBy('tanggal','desc')->where('jenis','diklat')
