@@ -48,8 +48,8 @@
                                 <tr>
                                     <th>no</th>
                                     <th>program</th>
+                                    <th>tanggal</th>
                                     <th>penyelenggara</th>
-                                    {{-- <th>tanggal</th> --}}
                                     <th>peserta</th>
                                 </tr>
                             </thead>
@@ -272,8 +272,8 @@
                         }  
                     },
                     {data:'program',name:'program'},
+                    {data:'tanggal',name:'tanggal'},
                     {data:'cabang',name:'cabang'},
-                    // {data:'tanggal',name:'tanggal'},
                     {data:'peserta',name:'peserta'},
                    
                 ]
