@@ -50,7 +50,7 @@
                                     <th>program</th>
                                     <th>penyelenggara</th>
                                     {{-- <th>tanggal</th> --}}
-                                    {{-- <th>peserta</th> --}}
+                                    <th>peserta</th>
                                 </tr>
                             </thead>
                             <tbody style="text-transform: uppercase; font-size: 12px">
