@@ -26,10 +26,10 @@
   window.OneSignal = window.OneSignal || [];
   OneSignal.push(function() {
     OneSignal.init({
-      appId: "73f2b60b-9bf0-4f0c-a1dd-9f32d23d0224",
+      appId: "b1a541c7-d7c4-4ad9-84f8-21e87df7dffd",
     });
-  }); 
-</script> 
+  });
+</script>
 
 <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
 <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
