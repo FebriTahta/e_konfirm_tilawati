@@ -29,4 +29,9 @@ Route::post('/konfirmasi-data-peserta-acc',[KonfirmasiCont::class,'acc'])->name(
 Route::get('/seluruh-diklat',[DiklatCont::class, 'index'])->name('seluruh.diklat');
 Route::get('/data-diklat',[DiklatCont::class, 'data_diklat'])->name('data_diklat');
 
+//webinar
+Route::get('/seluruh-webinar',[DiklatCont::class, 'index2'])->name('seluruh.webinar');
+Route::get('/data-webinar',[DiklatCont::class, 'data_webinar'])->name('data_webinar');
+
+
 

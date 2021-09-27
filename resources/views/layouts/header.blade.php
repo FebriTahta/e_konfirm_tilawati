@@ -88,7 +88,7 @@
 											<a href="{{route('seluruh.diklat')}}">Daftar Semua Diklat</a>
 										</li>
 										<li>
-											<a href="#">Daftar Semua Webinar</a>
+											<a href="{{route('seluruh.webinar')}}">Daftar Semua Webinar</a>
 										</li>
 									</ul>
 								</li>

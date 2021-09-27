@@ -36,4 +36,26 @@ class DiklatCont extends Controller
                         ->make(true);
         }
     }
+
+    public function data_webinar(Request $request)
+    {
+        if(request()->ajax())
+        {
+            $data = Pelatihan::where('jenis','webinar')->get();
+                    return DataTables::of($data)
+                        ->addColumn('peserta', function($data){
+                            $data2 = Peserta::where('pelatihan_id',$data->id)->where('status',1)->get()->count();
+                            $data3 = Peserta::where('pelatihan_id',$data->id)->where('status',0)->get()->count();
+                            return $data2.' Fix - '.$data3.' Menunggu Konfirmasi';
+                        })
+                        ->addColumn('cabang', function($data){
+                            return $data->cabang->name;
+                        })
+                        ->addColumn('program', function($data){
+                            return $data->program->name;
+                        })
+                        ->rawColumns(['cabang','program','peserta'])
+                        ->make(true);
+        }
+    }
 }
