@@ -63,6 +63,11 @@ class Peserta extends Model
         return $this->belongsTo(Kecamatan::class);
     }
 
+    public function program()
+    {
+        return $this->belongsTo(Program::class);
+    }
+
     public function certificate()
     {
         return $this->hasOne(Certificate::class);

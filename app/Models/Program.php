@@ -27,6 +27,11 @@ class Program extends Model
         return $this->hasMany(Pelatihan::class);
     }
 
+    public function peserta()
+    {
+        return $this->hasMany(Peserta::class);
+    }
+
     public function penilaian()
     {
         return $this->hasmany(Penilaian::class);
