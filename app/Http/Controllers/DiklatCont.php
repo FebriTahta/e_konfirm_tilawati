@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Peserta;
 use App\Models\Pelatihan;
-use DataTables;
+use App\Models\Peserta;
 use Carbon\Carbon;
+use DataTables;
 use Illuminate\Http\Request;
 
 class DiklatCont extends Controller
