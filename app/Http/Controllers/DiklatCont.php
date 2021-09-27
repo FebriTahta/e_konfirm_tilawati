@@ -15,7 +15,7 @@ class DiklatCont extends Controller
         return view('diklat.index');
     }
 
-    public function index()
+    public function index2()
     {
         return view('diklat.index2');
     }
