@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Pelatihan;
 use App\Models\Peserta;
+use App\Models\Program;
 use Carbon\Carbon;
 use DataTables;
 use Illuminate\Http\Request;
@@ -20,17 +21,17 @@ class DiklatCont extends Controller
         {
             $data = Pelatihan::with('program','cabang','peserta');
                      return DataTables::of($data)->make(true)
-                        ->addColumn('peserta', function($data){
-                                $data2 = Peserta::where('pelatihan_id', $data->id)->where('status',1)->count();
-                                return $data2;
-                            })
+                        // ->addColumn('peserta', function($data){
+                        //         $data2 = Peserta::where('pelatihan_id', $data->id)->where('status',1)->count();
+                        //         return $data2;
+                        //     })
                         ->addColumn('cabang', function($data){
                             return $data->cabang->name;
                         })
-                        ->addColumn('program', function($data){
-                            return $data->program->name;
-                        })
-                        ->rawColumns(['cabang','program','peserta'])
+                        // ->addColumn('program', function($data){
+                        //     return $data->program->name;
+                        // })
+                        ->rawColumns(['cabang'])
                         ->make(true);
             // if(!empty($request->dari))
             // {
