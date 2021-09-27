@@ -25,13 +25,13 @@ class DiklatCont extends Controller
                         //     $data2 = Peserta::where('pelatihan_id', $data->id)->where('status',1)->count();
                         //     return $data2;
                         // })
-                        ->addColumn('cabang', function($data){
-                            return $data->cabang->name;
-                        })
+                        // ->addColumn('cabang', function($data){
+                        //     return $data->cabang->name;
+                        // })
                         ->addColumn('program', function($data){
                             return $data->program->name;
                         })
-                        ->rawColumns(['cabang','program'])
+                        ->rawColumns(['program'])
                         ->make(true);
             // if(!empty($request->dari))
             // {
