@@ -183,7 +183,15 @@ class KonfirmasiCont extends Controller
                 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
                 $result = curl_exec($curl);
                 curl_close($curl);
-                //
+                
+                //hapus file di subdomain registrasi bagi yang datanya ditolak
+                foreach ($data->filepeserta as $key => $value) {
+                    # code...
+                    File::delete("https://registrasi.tilawatipusat.com/file_peserta/'.$value->file.'");
+                }
+                //hapus peserta bagi yang datanya ditolak agar bisa registrasi lagi
+                $data->delete();
+
                 return response()->json(
                     [
                       'success' => 'Pendaftaran Peserta Telah Ditolak!',
