@@ -15,6 +15,11 @@ class DiklatCont extends Controller
         return view('diklat.index');
     }
 
+    public function index()
+    {
+        return view('diklat.index2');
+    }
+
     public function data_diklat(Request $request)
     {
         if(request()->ajax())
