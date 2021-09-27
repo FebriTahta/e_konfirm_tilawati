@@ -271,8 +271,8 @@
                             return meta.row + meta.settings._iDisplayStart + 1;
                         }  
                     },
-                    {data:'program',name:'program.name'},
-                    {data:'cabang',name:'cabang.name'},
+                    {data:'program',name:'program'},
+                    {data:'cabang',name:'cabang'},
                     // {data:'tanggal',name:'tanggal'},
                     // {data:'peserta',name:'peserta'},
                    

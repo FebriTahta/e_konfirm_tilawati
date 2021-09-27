@@ -19,7 +19,7 @@ class DiklatCont extends Controller
     {
         if(request()->ajax())
         {
-            $data = Pelatihan::with(['cabang','program']);
+            $data = Pelatihan::with('cabang')->with('program');
                      return DataTables::of($data)
                         // ->addColumn('peserta', function($data){
                         //     $data2 = Peserta::where('pelatihan_id', $data->id)->where('status',1)->count();
