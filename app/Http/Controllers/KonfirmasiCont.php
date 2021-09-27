@@ -190,7 +190,7 @@ class KonfirmasiCont extends Controller
                 //hapus file di subdomain registrasi bagi yang datanya ditolak
                 foreach ($data->filepeserta as $key => $value) {
                     # code...
-                    File::delete("https://registrasi.tilawatipusat.com/file_peserta/'.$value->file.'");
+                    File::delete('https://registrasi.tilawatipusat.com/file_peserta/'.$value->file.'');
                 }
                 //hapus peserta bagi yang datanya ditolak agar bisa registrasi lagi
                 $data->delete();
