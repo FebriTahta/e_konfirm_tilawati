@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\KonfirmasiCont;
+use App\Http\Controllers\DiklatCont;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,6 +25,6 @@ Route::post('/konfirmasi-data-peserta-acc',[KonfirmasiCont::class,'acc'])->name(
 
 
 //popok bawang
-Route::get('/2',[KonfirmasiCont::class, 'index2'])->name('seluruh.e_sertifikat');
+Route::get('/seluruh-diklat',[DiklatCont::class, 'index'])->name('seluruh.diklat');
 
 
