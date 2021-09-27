@@ -23,7 +23,8 @@ class DiklatCont extends Controller
                     return DataTables::of($data)
                         ->addColumn('peserta', function($data){
                             $data2 = Peserta::where('pelatihan_id',$data->id)->where('status',1)->get()->count();
-                            return $data2.'- Peserta';
+                            $data3 = Peserta::where('pelatihan_id',$data->id)->where('status',0)->get()->count();
+                            return $data2.' Fix - '.$data3.' Menunggu Konfirmasi';
                         })
                         ->addColumn('cabang', function($data){
                             return $data->cabang->name;
