@@ -272,7 +272,7 @@
                         }  
                     },
                     // {data:'program',name:'program.name'},
-                    {data:'cabang_id',name:'cabang_id'},
+                    {data:'cabang',name:'cabang.name'},
                     // {data:'tanggal',name:'tanggal'},
                     // {data:'peserta',name:'peserta'},
                    
