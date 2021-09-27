@@ -30,8 +30,8 @@
         <div class="auto-container">
             <!-- Sec Title -->
             <div class="sec-title centered">
-                <div class="title">Konfirmasi data peserta baru berikut ini</div>
-                <h2>Data Peserta Pendaftaran Baru</h2>
+                <div class="title">Seluruh Daftar Diklat</div>
+                <h2>Data Diklat</h2>
                 <div class="separate"></div>
             </div>
         </div>
@@ -41,19 +41,16 @@
                     <!-- Sec Title Two -->
                     <div class="table-responsive">
                         <span class="sec-title-two">
-                            <a href="#" class="title">Data Peserta</a>
+                            <a href="#" class="title">Data Diklat</a>
                         </span>
                         <table id="data" class="table peserta table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%; ">
                             <thead style="text-transform: capitalize" class="text-success">
                                 <tr>
                                     <th>no</th>
-                                    <th>nama</th>
                                     <th>program</th>
-                                    <th>cabang</th>
-                                    <th>phone</th>
-                                    <th>status</th>
-                                    <th>dokumen</th>
-                                    <th>opsi</th>
+                                    <th>penyelenggara</th>
+                                    <th>tanggal</th>
+                                    <th>peserta</th>
                                 </tr>
                             </thead>
                             <tbody style="text-transform: uppercase; font-size: 12px">
@@ -266,7 +263,7 @@
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: "/data-peserta",
+                    url: "/data-diklat",
                 },
                 columns: [
                     {data:'no',
@@ -274,13 +271,10 @@
                             return meta.row + meta.settings._iDisplayStart + 1;
                         }  
                     },
-                    {data:'name',name:'name'},
                     {data:'program',name:'program.name'},
                     {data:'cabang',name:'cabang.name'},
-                    {data:'telp',name:'telp'},
-                    {data:'status',name:'status'},
-                    {data:'registrasi',name:'registrasi'},
-                    {data:'action',name:'action'},
+                    {data:'tanggal',name:'tanggal'},
+                    {data:'peserta',name:'peserta'},
                    
                 ]
             });
