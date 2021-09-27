@@ -31,7 +31,7 @@ class DiklatCont extends Controller
                         ->addColumn('program', function($data){
                             return $data->program->name;
                         })
-                        ->rawColumns(['cabang','program'])
+                        ->rawColumns(['cabang','program','peserta'])
                         ->make(true);
         }
     }
