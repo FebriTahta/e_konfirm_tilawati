@@ -20,7 +20,7 @@ class DiklatCont extends Controller
         {
             if(!empty($request->dari))
             {
-                $data   = Pelatihan::with('cabang')->with('peserta')->orderBy('tanggal','desc')->where('jenis','diklat')
+                $data   = Pelatihan::with('cabang')->with('peserta')->with('program')->orderBy('tanggal','desc')->where('jenis','diklat')
                 ->whereBetween('tanggal', array($request->dari, $request->sampai));
                 return DataTables::of($data)
                         ->addColumn('peserta', function($data){
@@ -45,7 +45,7 @@ class DiklatCont extends Controller
                 ->rawColumns(['cabang','program','peserta','tanggal'])
                 ->make(true);
             }else{
-                $data   = Pelatihan::with('cabang','program')->withCount('peserta')->orderBy('tanggal','desc')->where('jenis','diklat');
+                $data   = Pelatihan::with('cabang')->with('program')->with('peserta')->orderBy('tanggal','desc')->where('jenis','diklat');
                 return DataTables::of($data)
                         ->addColumn('peserta', function($data){
                             $data2 = Peserta::where('pelatihan_id', $data->id)->where('status',1)->count();

@@ -48,9 +48,9 @@
                                 <tr>
                                     <th>no</th>
                                     <th>program</th>
-                                    <th>penyelenggara</th>
+                                    {{-- <th>penyelenggara</th>
                                     <th>tanggal</th>
-                                    <th>peserta</th>
+                                    <th>peserta</th> --}}
                                 </tr>
                             </thead>
                             <tbody style="text-transform: uppercase; font-size: 12px">
@@ -272,9 +272,9 @@
                         }  
                     },
                     {data:'program',name:'program.name'},
-                    {data:'cabang',name:'cabang.name'},
-                    {data:'tanggal',name:'tanggal'},
-                    {data:'peserta',name:'peserta'},
+                    // {data:'cabang',name:'cabang.name'},
+                    // {data:'tanggal',name:'tanggal'},
+                    // {data:'peserta',name:'peserta'},
                    
                 ]
             });
