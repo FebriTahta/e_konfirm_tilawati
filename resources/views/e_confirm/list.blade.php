@@ -275,8 +275,8 @@
                         }  
                     },
                     {data:'name',name:'name'},
-                    {data:'program',name:'program'},
-                    {data:'cabang',name:'cabang'},
+                    {data:'program',name:'program.name'},
+                    {data:'cabang',name:'cabang.name'},
                     {data:'telp',name:'telp'},
                     {data:'status',name:'status'},
                     {data:'registrasi',name:'registrasi'},
