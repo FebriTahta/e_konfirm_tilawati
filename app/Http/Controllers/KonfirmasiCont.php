@@ -210,7 +210,7 @@ class KonfirmasiCont extends Controller
         if(request()->ajax())
         {
             
-                $data   = Peserta::with('kabupaten')->with('pelatihan')->with('filepeserta')->where('status', 0);
+                $data   = Peserta::with('kabupaten')->with('pelatihan')->with('filepeserta')->with('program')->with('cabang')->where('status', 0);
                 return DataTables::of($data)
 
                     ->addColumn('registrasi', function ($data) {
