@@ -48,8 +48,8 @@
                                 <tr>
                                     <th>no</th>
                                     <th>program</th>
-                                    <th>penyelenggara</th>
                                     <th>tanggal</th>
+                                    <th>penyelenggara</th>
                                     <th>peserta</th>
                                 </tr>
                             </thead>
