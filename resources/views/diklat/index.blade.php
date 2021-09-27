@@ -47,8 +47,8 @@
                             <thead style="text-transform: capitalize" class="text-success">
                                 <tr>
                                     <th>no</th>
-                                    {{-- <th>program</th> --}}
-                                    {{-- <th>penyelenggara</th> --}}
+                                    <th>program</th>
+                                    <th>penyelenggara</th>
                                     {{-- <th>tanggal</th> --}}
                                     {{-- <th>peserta</th> --}}
                                 </tr>
@@ -271,8 +271,8 @@
                             return meta.row + meta.settings._iDisplayStart + 1;
                         }  
                     },
-                    // {data:'program',name:'program'},
-                    // {data:'cabang',name:'cabang'},
+                    {data:'program_id',name:'program_id'},
+                    {data:'cabang_id',name:'cabang_id'},
                     // {data:'tanggal',name:'tanggal'},
                     // {data:'peserta',name:'peserta'},
                    
