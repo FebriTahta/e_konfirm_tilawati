@@ -37,7 +37,16 @@ class DiklatCont extends Controller
                         ->addColumn('program', function($data){
                             return $data->program->name;
                         })
-                        ->rawColumns(['cabang','program','peserta'])
+                        ->addColumn('tanggal', function($data){
+                            if ($data->sampai_tanggal !== null) {
+                                # code...
+                                return Carbon::parse($data->tanggal)->isoFormat('dddd, D MMMM Y').' - '.
+                                Carbon::parse($data->sampai_tanggal)->isoFormat('dddd, D MMMM Y');
+                            }else{
+                                return Carbon::parse($data->tanggal)->isoFormat('dddd, D MMMM Y');
+                            }
+                        })
+                        ->rawColumns(['cabang','program','peserta','tanggal'])
                         ->make(true);
         }
     }
@@ -59,7 +68,16 @@ class DiklatCont extends Controller
                         ->addColumn('program', function($data){
                             return $data->program->name;
                         })
-                        ->rawColumns(['cabang','program','peserta'])
+                        ->addColumn('tanggal', function($data){
+                            if ($data->sampai_tanggal !== null) {
+                                # code...
+                                return Carbon::parse($data->tanggal)->isoFormat('dddd, D MMMM Y').' - '.
+                                Carbon::parse($data->sampai_tanggal)->isoFormat('dddd, D MMMM Y');
+                            }else{
+                                return Carbon::parse($data->tanggal)->isoFormat('dddd, D MMMM Y');
+                            }
+                        })
+                        ->rawColumns(['cabang','program','peserta','tanggal'])
                         ->make(true);
         }
     }
