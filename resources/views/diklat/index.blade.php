@@ -48,7 +48,7 @@
                                 <tr>
                                     <th>no</th>
                                     {{-- <th>program</th> --}}
-                                    <th>penyelenggara</th>
+                                    {{-- <th>penyelenggara</th> --}}
                                     {{-- <th>tanggal</th> --}}
                                     {{-- <th>peserta</th> --}}
                                 </tr>
@@ -272,7 +272,7 @@
                         }  
                     },
                     // {data:'program',name:'program'},
-                    {data:'cabang',name:'cabang'},
+                    // {data:'cabang',name:'cabang'},
                     // {data:'tanggal',name:'tanggal'},
                     // {data:'peserta',name:'peserta'},
                    
