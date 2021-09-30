@@ -33,5 +33,7 @@ Route::get('/data-diklat',[DiklatCont::class, 'data_diklat'])->name('data_diklat
 Route::get('/seluruh-webinar',[DiklatCont::class, 'index2'])->name('seluruh.webinar');
 Route::get('/data-webinar',[DiklatCont::class, 'data_webinar'])->name('data_webinar');
 
+//peserta di dalam webinar dan diklat
+Route::get('/data-peserta/{pelatihan_id}',[DiklatCont::class, 'data_peserta']);
 
 
