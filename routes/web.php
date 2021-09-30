@@ -35,5 +35,5 @@ Route::get('/data-webinar',[DiklatCont::class, 'data_webinar'])->name('data_webi
 
 //peserta di dalam webinar dan diklat
 Route::get('/data-peserta/{pelatihan_id}',[DiklatCont::class, 'data_peserta']);
-
+Route::get('/daftar-data-peserta/{pelatihan_id}',[DiklatCont::class, 'daftar_data_peserta']);
 

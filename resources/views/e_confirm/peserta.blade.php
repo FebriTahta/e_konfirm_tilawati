@@ -33,9 +33,9 @@
                 <div class="title">{{$data->program->name.' - '.$data->cabang->name}}</div>
                 <h5>
                     @if ($data->program->sampai_tanggal == null)
-                        {{\Carbon\Carbon::parse($data->tanggal)->isoFormat('dddd, D MMMM Y');}}
+                        {{\Carbon\Carbon::parse($data->tanggal)->isoFormat('dddd, D MMMM Y')}}
                     @else
-                        {{\Carbon\Carbon::parse($data->tanggal)->isoFormat('dddd, D MMMM Y').' - '.{{\Carbon\Carbon::parse($data->sampai_tanggal)->isoFormat('dddd, D MMMM Y');}};}}
+                        {{\Carbon\Carbon::parse($data->tanggal)->isoFormat('dddd, D MMMM Y').' - '.\Carbon\Carbon::parse($data->sampai_tanggal)->isoFormat('dddd, D MMMM Y')}}
                     @endif
                 </h5>
                 <div class="separate"></div>
@@ -48,6 +48,7 @@
                     <div class="table-responsive">
                         <span class="sec-title-two">
                             <a href="#" class="title">Data Peserta</a>
+                            <input type="hidden" id="pelatihan_ids" value="{{$data->id}}">
                         </span>
                         <table id="data" class="table peserta table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%; ">
                             <thead style="text-transform: capitalize" class="text-success">
@@ -263,15 +264,16 @@
                     }
                 });
             });
-
+            
             $(document).ready(function(){
+            var pel_id = $('#pelatihan_ids').val();
             $('#data').DataTable({
                 //karena memakai yajra dan template maka di destroy dulu biar ga dobel initialization
                 destroy: true,
                 processing: true,
                 serverSide: true,
                 ajax: {
-                    url: "/data-peserta",
+                    url: "/daftar-data-peserta/"+pel_id,
                 },
                 columns: [
                     {data:'no',
