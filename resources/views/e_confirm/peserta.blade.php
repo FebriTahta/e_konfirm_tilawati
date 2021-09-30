@@ -32,7 +32,7 @@
             <div class="sec-title centered">
                 <div class="title">{{$data->program->name.' - '.$data->cabang->name}}</div>
                 <h5>
-                    @if ($data->program->sampai_tanggal == null)
+                    @if ($data->sampai_tanggal == null)
                         {{\Carbon\Carbon::parse($data->tanggal)->isoFormat('dddd, D MMMM Y')}}
                     @else
                         {{\Carbon\Carbon::parse($data->tanggal)->isoFormat('dddd, D MMMM Y').' - '.\Carbon\Carbon::parse($data->sampai_tanggal)->isoFormat('dddd, D MMMM Y')}}
