@@ -145,6 +145,57 @@
                 </div><!-- /.modal-dialog -->
             </div><!-- /.modal -->
         </div>
+
+        {{-- TUTUP DIKLAT --}}
+        <div class="col-sm-6 col-md-3 m-t-30">
+            <div class="modal fade modal-acc" id="modal-tutup" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                    <div class="modal-content">
+                        <div class="modal-body text-center">
+                            <span class="text-uppercase">TUTUP DIKLAT INI ?</span>
+                            <hr>
+                            <form id="formacc" action="#" method="POST" enctype="multipart/form-data">@csrf
+                                <div class="row">
+                                    <input type="text" value="ditutup" name="pendaftaran" required>
+                                    <div class="form-group col-6 col-xl-6">
+                                        <input type="submit" id="btntutup" class="btn btn-success" value="Terima!">
+                                    </div>
+                                    <div class="form-group col-6 col-xl-6">
+                                        <button class="btn btn-secondary" data-dismiss="modal">Close!</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        </div>
+
+        {{-- BUKA DIKLAT --}}
+        <div class="col-sm-6 col-md-3 m-t-30">
+            <div class="modal fade modal-acc" id="modal-buka" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-md">
+                    <div class="modal-content">
+                        <div class="modal-body text-center">
+                            <span class="text-uppercase">TUTUP DIKLAT INI ?</span>
+                            <hr>
+                            <form id="formacc" action="#" method="POST" enctype="multipart/form-data">@csrf
+                                <div class="row">
+                                    <input type="text" value="dibuka" name="pendaftaran" required>
+                                    <div class="form-group col-6 col-xl-6">
+                                        <input type="submit" id="btnbuka" class="btn btn-success" value="Terima!">
+                                    </div>
+                                    <div class="form-group col-6 col-xl-6">
+                                        <button class="btn btn-secondary" data-dismiss="modal">Close!</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        </div>
+
     </section>
 </div>
 @endsection
