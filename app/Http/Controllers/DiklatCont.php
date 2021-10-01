@@ -175,4 +175,18 @@ class DiklatCont extends Controller
         }
     }
 
+    public function page_broadcast()
+    {
+        return view('broadcast.broadcast');
+    }
+
+    public function daftar_broadcast(Request $request)
+    {
+        $data = Excel::Import(new BroadcastImport(), $request->file('file'));
+        return Response()->json([
+            $data,
+            'success'=>'Data Berhasil Diimport'
+        ]);
+    }
+
 }

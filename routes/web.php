@@ -37,3 +37,7 @@ Route::get('/data-webinar',[DiklatCont::class, 'data_webinar'])->name('data_webi
 Route::get('/data-peserta/{pelatihan_id}',[DiklatCont::class, 'data_peserta']);
 Route::get('/daftar-data-peserta/{pelatihan_id}',[DiklatCont::class, 'daftar_data_peserta']);
 
+//broadcast
+Route::get('/page-broadcast',[DiklatCont::class, 'page_broadcast'])->name('broadcast');
+Route::get('/daftar-broadcast',[DiklatCont::class, 'daftar_broadcast']);
+

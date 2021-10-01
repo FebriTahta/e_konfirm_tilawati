@@ -103,6 +103,9 @@
 										<li>
 											<a href="{{route('seluruh.webinar')}}">Daftar Semua Webinar</a>
 										</li>
+										<li>
+											<a href="{{route('broadcast')}}">Broadcast</a>
+										</li>
 									</ul>
 								</li>
 							</ul>
