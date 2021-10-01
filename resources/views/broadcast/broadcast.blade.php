@@ -45,9 +45,11 @@
                         <span class="sec-title-two">
                             <a href="#" class="title">Data Peserta</a>
                             <input type="hidden" id="pelatihan_ids" value="">
-                        </span>
-                        <button class="btn btn-sm btn-success" data-target="#modal-target" data-toggle="modal">broadcast</button>
-                        <button class="btn btn-sm btn-success">hapus data</button>
+                        </span><br>
+                        <div class="text-left">
+                            <button class="btn btn-sm btn-outline-info" data-target="#modal-target" data-toggle="modal">broadcast</button>
+                            <button class="btn btn-sm btn-outline-danger">hapus data</button>
+                        </div><br>
                         <table id="data" class="table peserta table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%; ">
                             <thead style="text-transform: capitalize" class="text-success">
                                 <tr>
@@ -66,7 +68,7 @@
         {{-- file --}}
 
         <div class="col-sm-6 col-md-3 m-t-30">
-            <div class="modal fade bs-example-modal-cabang" modal="modal-target" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal fade bs-example-modal-cabang" id="modal-target" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
                     <div class="modal-content">
                         <div class="modal-header">
@@ -229,11 +231,7 @@
                         }  
                     },
                     {data:'name',name:'name'},
-                    {data:'kabupaten',name:'kabupaten.nama'},
                     {data:'telp',name:'telp'},
-                    {data:'registrasi',name:'registrasi'},
-                    {data:'status',name:'status'},
-                    {data:'action',name:'action'},
                    
                 ]
             });

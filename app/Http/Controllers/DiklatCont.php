@@ -46,7 +46,18 @@ class DiklatCont extends Controller
                                 return Carbon::parse($data->tanggal)->isoFormat('dddd, D MMMM Y');
                             }
                         })
-                        ->rawColumns(['cabang','program','peserta','tanggal'])
+                        ->addColumn('action', function($data){
+                            if ($data->pendaftaran !== 'ditutup') {
+                                # buka code...
+                                $btn = '<button class="btn btn-sm btn-info" data-toggle="modal" data-target="#modal-tutup"> BUKA </button>';
+                                return $btn;
+                            }else {
+                                # tutup code...
+                                $btn = '<button class="btn btn-sm btn-info" data-toggle="modal" data-target="#modal-buka"> TUTUP </button>';
+                                return $btn;
+                            }
+                        })
+                        ->rawColumns(['cabang','program','peserta','tanggal','action'])
                         ->make(true);
         }
     }
@@ -182,11 +193,17 @@ class DiklatCont extends Controller
 
     public function daftar_broadcast(Request $request)
     {
-        $data = Excel::Import(new BroadcastImport(), $request->file('file'));
-        return Response()->json([
-            $data,
-            'success'=>'Data Berhasil Diimport'
-        ]);
+        if(request()->ajax())
+        {
+            $data = Broadcast::all();
+            return DataTables::of($data)
+            ->make(true);
+        }
+    }
+
+    public function import_target()
+    {
+       
     }
 
 }
