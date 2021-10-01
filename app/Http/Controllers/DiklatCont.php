@@ -53,7 +53,7 @@ class DiklatCont extends Controller
                                 return $btn;
                             }else {
                                 # tutup code...
-                                $btn = '<button data-id="'.$data->id.'"  class="btn btn-sm btn-info" data-toggle="modal" data-target="#modal-buka"> TUTUP </button>';
+                                $btn = '<button data-id="'.$data->id.'"  class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modal-buka"> TUTUP </button>';
                                 return $btn;
                             }
                         })
