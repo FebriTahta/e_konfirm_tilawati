@@ -156,7 +156,7 @@
                             <hr>
                             <form id="formacc" action="#" method="POST" enctype="multipart/form-data">@csrf
                                 <div class="row">
-                                    <input type="text" value="ditutup" name="pendaftaran" required>
+                                    <input type="hidden" value="ditutup" name="pendaftaran" required>
                                     <div class="form-group col-6 col-xl-6">
                                         <input type="submit" id="btntutup" class="btn btn-success" value="Terima!">
                                     </div>
@@ -181,7 +181,7 @@
                             <hr>
                             <form id="formacc" action="#" method="POST" enctype="multipart/form-data">@csrf
                                 <div class="row">
-                                    <input type="text" value="dibuka" name="pendaftaran" required>
+                                    <input type="hidden" value="dibuka" name="pendaftaran" required>
                                     <div class="form-group col-6 col-xl-6">
                                         <input type="submit" id="btnbuka" class="btn btn-success" value="Terima!">
                                     </div>
