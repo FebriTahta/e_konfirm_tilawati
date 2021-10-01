@@ -18,7 +18,8 @@ class Pelatihan extends Model
         'keterangan',
         'tempat',
         'status',
-        'jenis'
+        'jenis',
+        'pendaftaran'
     ];
     protected $dates = ['deleted_at'];
 
