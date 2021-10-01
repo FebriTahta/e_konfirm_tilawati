@@ -49,11 +49,11 @@ class DiklatCont extends Controller
                         ->addColumn('action', function($data){
                             if ($data->pendaftaran !== 'ditutup') {
                                 # buka code...
-                                $btn = '<button class="btn btn-sm btn-info" data-toggle="modal" data-target="#modal-tutup"> BUKA </button>';
+                                $btn = '<button data-id="'.$data->id.'" class="btn btn-sm btn-info" data-toggle="modal" data-target="#modal-tutup"> BUKA </button>';
                                 return $btn;
                             }else {
                                 # tutup code...
-                                $btn = '<button class="btn btn-sm btn-info" data-toggle="modal" data-target="#modal-buka"> TUTUP </button>';
+                                $btn = '<button data-id="'.$data->id.'"  class="btn btn-sm btn-info" data-toggle="modal" data-target="#modal-buka"> TUTUP </button>';
                                 return $btn;
                             }
                         })
@@ -183,6 +183,29 @@ class DiklatCont extends Controller
                         })
                 ->rawColumns(['action','kabupaten','registrasi','status'])
                 ->make(true);
+        }
+    }
+
+    public function buka_tutup(Reuqest $request)
+    {
+        if(request()->ajax())
+        {
+
+            $data = Pelatihan::updateOrCreate(
+                [
+                  'id' => $request->id
+                ],
+                [
+                    'pendaftaran' => $request->pendaftaran,
+                ]
+            );
+            return response()->json(
+                [
+                  'success' => 'Pendaftaran '.$data->pendaftaran.'',
+                  'message' => 'Pendaftaran '.$data->pendaftaran.''
+                ]
+            );
+
         }
     }
 

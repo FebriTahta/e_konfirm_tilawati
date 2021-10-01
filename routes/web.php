@@ -41,3 +41,4 @@ Route::get('/daftar-data-peserta/{pelatihan_id}',[DiklatCont::class, 'daftar_dat
 Route::get('/page-broadcast',[DiklatCont::class, 'page_broadcast'])->name('broadcast');
 Route::get('/daftar-broadcast',[DiklatCont::class, 'daftar_broadcast']);
 
+Route::post('/buka-tutup-diklat',[DiklatCont::class, 'buka_tutup'])->name('buka.tutup');

@@ -154,11 +154,12 @@
                         <div class="modal-body text-center">
                             <span class="text-uppercase">TUTUP DIKLAT INI ?</span>
                             <hr>
-                            <form id="formacc" action="#" method="POST" enctype="multipart/form-data">@csrf
+                            <form id="formtutup" action="#" method="POST" enctype="multipart/form-data">@csrf
                                 <div class="row">
+                                    <input type="text" id="id" name="id" required>
                                     <input type="hidden" value="ditutup" name="pendaftaran" required>
                                     <div class="form-group col-6 col-xl-6">
-                                        <input type="submit" id="btntutup" class="btn btn-success" value="Terima!">
+                                        <input type="submit" id="btntutup" class="btn btn-danger" value="Tutup!">
                                     </div>
                                     <div class="form-group col-6 col-xl-6">
                                         <button class="btn btn-secondary" data-dismiss="modal">Close!</button>
@@ -177,13 +178,14 @@
                 <div class="modal-dialog modal-dialog-centered modal-md">
                     <div class="modal-content">
                         <div class="modal-body text-center">
-                            <span class="text-uppercase">TUTUP DIKLAT INI ?</span>
+                            <span class="text-uppercase">BUKA DIKLAT INI ?</span>
                             <hr>
-                            <form id="formacc" action="#" method="POST" enctype="multipart/form-data">@csrf
+                            <form id="formbuka" action="#" method="POST" enctype="multipart/form-data">@csrf
                                 <div class="row">
+                                    <input type="text" id="id" name="id" required>
                                     <input type="hidden" value="dibuka" name="pendaftaran" required>
                                     <div class="form-group col-6 col-xl-6">
-                                        <input type="submit" id="btnbuka" class="btn btn-success" value="Terima!">
+                                        <input type="submit" id="btnbuka" class="btn btn-success" value="Buka!">
                                     </div>
                                     <div class="form-group col-6 col-xl-6">
                                         <button class="btn btn-secondary" data-dismiss="modal">Close!</button>
@@ -239,7 +241,18 @@
                 var modal = $(this)
                 document.getElementById("img_file").src = file;
             })
-
+            $('#modal-buka').on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget)
+                var id = button.data('id')
+                var modal = $(this)
+                modal.find('.modal-body #id').val(id);
+            })
+            $('#modal-tutup').on('show.bs.modal', function(event) {
+                var button = $(event.relatedTarget)
+                var id = button.data('id')
+                var modal = $(this)
+                modal.find('.modal-body #id').val(id);
+            })
             $('#formacc').submit(function(e) {
                 e.preventDefault();
                 var formData = new FormData(this);
@@ -299,6 +312,76 @@
                         $("#formacc2")[0].reset();
                         // $('#hapusData').modal('hide');
                         $('#btntolak').attr('disabled',false);
+                    }
+                },
+                error: function(data)
+                {
+                    console.log(data);
+                    }
+                });
+            });
+
+            $('#formtutup').submit(function(e) {
+                e.preventDefault();
+                var formData = new FormData(this);
+                $.ajax({
+                type:'POST',
+                url: "{{ route('buka.tutup')}}",
+                data: formData,
+                cache:false,
+                contentType: false,
+                processData: false,
+                beforeSend:function(){
+                    $('#btntutup').attr('disabled','disabled');
+                    $('#btntutup').val('Prosesing');
+                },
+                success: function(data){
+                    if(data.success)
+                    {
+                        //sweetalert and redirect
+                        toastr.error(data.success);
+                        // $("#cancel2").click();
+                        var oTable = $('#data').dataTable();
+                        oTable.fnDraw(false);
+                        $('#btntutup').val('Tutup!');
+                        $("#formtutup")[0].reset();
+                        // $('#hapusData').modal('hide');
+                        $('#btntutup').attr('disabled',false);
+                    }
+                },
+                error: function(data)
+                {
+                    console.log(data);
+                    }
+                });
+            });
+
+            $('#formbuka').submit(function(e) {
+                e.preventDefault();
+                var formData = new FormData(this);
+                $.ajax({
+                type:'POST',
+                url: "{{ route('buka.tutup')}}",
+                data: formData,
+                cache:false,
+                contentType: false,
+                processData: false,
+                beforeSend:function(){
+                    $('#btnbuka').attr('disabled','disabled');
+                    $('#btnbuka').val('Prosesing');
+                },
+                success: function(data){
+                    if(data.success)
+                    {
+                        //sweetalert and redirect
+                        toastr.error(data.success);
+                        // $("#cancel2").click();
+                        var oTable = $('#data').dataTable();
+                        oTable.fnDraw(false);
+                        $('#btnbuka').val('Buka!');
+                        $("#formbuka")[0].reset();
+                        // $('#hapusData').modal('hide');
+                        $('#btnbuka').attr('disabled',false);
                     }
                 },
                 error: function(data)
