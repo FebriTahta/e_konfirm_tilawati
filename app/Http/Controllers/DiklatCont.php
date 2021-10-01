@@ -186,7 +186,7 @@ class DiklatCont extends Controller
         }
     }
 
-    public function buka_tutup(Reuqest $request)
+    public function buka_tutup(Request $request)
     {
         if(request()->ajax())
         {
