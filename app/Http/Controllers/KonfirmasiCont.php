@@ -132,7 +132,7 @@ class KonfirmasiCont extends Controller
                     'secret' => false, // or true
                     'priority' => false, // or true
                 ];
-
+                add_filter( 'https_local_ssl_verify', '__return_true' );
                 curl_setopt($curl, CURLOPT_HTTPHEADER,
                     array(
                         "Authorization: $token",
@@ -169,7 +169,7 @@ class KonfirmasiCont extends Controller
                     'secret' => false, // or true
                     'priority' => false, // or true
                 ];
-
+                add_filter( 'https_local_ssl_verify', '__return_true' );
                 curl_setopt($curl, CURLOPT_HTTPHEADER,
                     array(
                         "Authorization: $token",
