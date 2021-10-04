@@ -132,7 +132,7 @@ class KonfirmasiCont extends Controller
                     'secret' => false, // or true
                     'priority' => false, // or true
                 ];
-                add_filter( 'https_local_ssl_verify', '__return_true' );
+
                 curl_setopt($curl, CURLOPT_HTTPHEADER,
                     array(
                         "Authorization: $token",
@@ -169,7 +169,7 @@ class KonfirmasiCont extends Controller
                     'secret' => false, // or true
                     'priority' => false, // or true
                 ];
-                add_filter( 'https_local_ssl_verify', '__return_true' );
+
                 curl_setopt($curl, CURLOPT_HTTPHEADER,
                     array(
                         "Authorization: $token",
@@ -181,6 +181,7 @@ class KonfirmasiCont extends Controller
                 curl_setopt($curl, CURLOPT_URL, "https://simo.wablas.com/api/send-message");
                 curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
                 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+                
                 $result = curl_exec($curl);
                 curl_close($curl);
                 
