@@ -81,6 +81,9 @@
                                 <div class="card-body">
                                     <img src="" id="img_file" style="width: auto; max-height: 100%; max-width: 100%" alt="">
                                 </div>
+                                <div class="form-group">
+                                    <button class="form-control btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
                             </div>
                         </div>
                     </div><!-- /.modal-content -->
