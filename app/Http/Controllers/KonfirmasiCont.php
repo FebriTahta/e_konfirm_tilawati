@@ -138,6 +138,7 @@ class KonfirmasiCont extends Controller
                         "Authorization: $token",
                     )
                 );
+                add_filter( 'https_local_ssl_verify', '__return_true' );
                 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($datas));
@@ -175,6 +176,7 @@ class KonfirmasiCont extends Controller
                         "Authorization: $token",
                     )
                 );
+                add_filter( 'https_local_ssl_verify', '__return_true' );
                 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
                 curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($datas));
