@@ -51,6 +51,7 @@
                                     <th>tanggal</th>
                                     <th>penyelenggara</th>
                                     <th>peserta</th>
+                                    <th>action</th>
                                 </tr>
                             </thead>
                             <tbody style="text-transform: uppercase; font-size: 12px">
@@ -275,7 +276,7 @@
                     {data:'tanggal',name:'tanggal'},
                     {data:'cabang',name:'cabang'},
                     {data:'peserta',name:'peserta'},
-                   
+                    {data:'action',name:'action'},
                 ]
             });
         });

@@ -88,7 +88,18 @@ class DiklatCont extends Controller
                                 return Carbon::parse($data->tanggal)->isoFormat('dddd, D MMMM Y');
                             }
                         })
-                        ->rawColumns(['cabang','program','peserta','tanggal'])
+                        ->addColumn('action', function($data){
+                            if ($data->pendaftaran !== 'ditutup') {
+                                # buka code...
+                                $btn = '<button data-id="'.$data->id.'" class="btn btn-sm btn-info" data-toggle="modal" data-target="#modal-tutup"> BUKA </button>';
+                                return $btn;
+                            }else {
+                                # tutup code...
+                                $btn = '<button data-id="'.$data->id.'"  class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modal-buka"> TUTUP </button>';
+                                return $btn;
+                            }
+                        })
+                        ->rawColumns(['cabang','program','peserta','tanggal','action'])
                         ->make(true);
         }
     }
