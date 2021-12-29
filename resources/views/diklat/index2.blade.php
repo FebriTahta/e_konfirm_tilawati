@@ -156,7 +156,7 @@
                             <hr>
                             <form id="formtutup" action="#" method="POST" enctype="multipart/form-data">@csrf
                                 <div class="row">
-                                    <input type="text" id="id" name="id" required>
+                                    <input type="hidden" id="id" name="id" required>
                                     <input type="hidden" value="ditutup" name="pendaftaran" required>
                                     <div class="form-group col-6 col-xl-6">
                                         <input type="submit" id="btntutup" class="btn btn-danger" value="Tutup!">
@@ -284,7 +284,75 @@
                     }
                 });
             });
-
+            $('#formbuka').submit(function(e) {
+                e.preventDefault();
+                var formData = new FormData(this);
+                $.ajax({
+                type:'POST',
+                url: "{{ route('buka.tutup')}}",
+                data: formData,
+                cache:false,
+                contentType: false,
+                processData: false,
+                beforeSend:function(){
+                    $('#btnbuka').attr('disabled','disabled');
+                    $('#btnbuka').val('Prosesing');
+                },
+                success: function(data){
+                    if(data.success)
+                    {
+                        //sweetalert and redirect
+                        toastr.error(data.success);
+                        // $("#cancel2").click();
+                        var oTable = $('#data').dataTable();
+                        oTable.fnDraw(false);
+                        $('#btnbuka').val('Buka!');
+                        $("#formbuka")[0].reset();
+                        // $('#hapusData').modal('hide');
+                        $('#btnbuka').attr('disabled',false);
+                    }
+                },
+                error: function(data)
+                {
+                    console.log(data);
+                    }
+                });
+            });
+            $('#formtutup').submit(function(e) {
+                e.preventDefault();
+                var formData = new FormData(this);
+                $.ajax({
+                type:'POST',
+                url: "{{ route('buka.tutup')}}",
+                data: formData,
+                cache:false,
+                contentType: false,
+                processData: false,
+                beforeSend:function(){
+                    $('#btntutup').attr('disabled','disabled');
+                    $('#btntutup').val('Prosesing');
+                },
+                success: function(data){
+                    if(data.success)
+                    {
+                        //sweetalert and redirect
+                        toastr.error(data.success);
+                        // $("#cancel2").click();
+                        var oTable = $('#data').dataTable();
+                        oTable.fnDraw(false);
+                        $('#btntutup').val('Tutup!');
+                        $("#formtutup")[0].reset();
+                        // $('#hapusData').modal('hide');
+                        $('#btntutup').attr('disabled',false);
+                    }
+                },
+                error: function(data)
+                {
+                    console.log(data);
+                    }
+                });
+            });
+            
             $('#formacc2').submit(function(e) {
                 e.preventDefault();
                 var formData = new FormData(this);
