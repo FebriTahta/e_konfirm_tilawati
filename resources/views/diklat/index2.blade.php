@@ -156,7 +156,7 @@
                             <hr>
                             <form id="formtutup" action="#" method="POST" enctype="multipart/form-data">@csrf
                                 <div class="row">
-                                    <input type="hidden" id="id" name="id" required>
+                                    <input type="text" id="id" name="id" required>
                                     <input type="hidden" value="ditutup" name="pendaftaran" required>
                                     <div class="form-group col-6 col-xl-6">
                                         <input type="submit" id="btntutup" class="btn btn-danger" value="Tutup!">
