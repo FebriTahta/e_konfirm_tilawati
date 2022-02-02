@@ -24,7 +24,7 @@ class DiklatCont extends Controller
     {
         if(request()->ajax())
         {
-            $data = Pelatihan::where('jenis','diklat')->orderBy('tanggal','desc');
+            $data = Pelatihan::where('jenis','diklat')->orderBy('tanggal','desc')->get();
                     return DataTables::of($data)
                         ->addColumn('peserta', function($data){
                             $data2 = Peserta::where('pelatihan_id',$data->id)->where('status',1)->get()->count();
