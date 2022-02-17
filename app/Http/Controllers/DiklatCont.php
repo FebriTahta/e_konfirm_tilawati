@@ -24,7 +24,7 @@ class DiklatCont extends Controller
     {
         if(request()->ajax())
         {
-            $data = Pelatihan::where('jenis','diklat')->orderBy('tanggal','desc')->get();
+            $data = Pelatihan::where('jenis','diklat')->orderBy('created_at','desc')->get();
                     return DataTables::of($data)
                         ->addColumn('peserta', function($data){
                             $data2 = Peserta::where('pelatihan_id',$data->id)->where('status',1)->get()->count();
@@ -66,7 +66,7 @@ class DiklatCont extends Controller
     {
         if(request()->ajax())
         {
-            $data = Pelatihan::where('jenis','webinar')->get();
+            $data = Pelatihan::where('jenis','webinar')->orderBy('created_at', 'desc')->get();
                     return DataTables::of($data)
                         ->addColumn('peserta', function($data){
                             $data2 = Peserta::where('pelatihan_id',$data->id)->where('status',1)->get()->count();
