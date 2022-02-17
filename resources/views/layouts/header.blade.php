@@ -3,7 +3,6 @@
 <head>
 <meta charset="utf-8">
 <title>Konfirmasi Data Peserta</title>
-* * * * * cd /home/tilawati/jurnal.tilawatipusat.com && php artisan schedule:run >> /dev/null 2>&1
 <!-- Stylesheets -->
 <link href="{{ asset('tilawatipusat/landing/css/bootstrap.css') }}" rel="stylesheet">
 <link href="{{ asset('tilawatipusat/landing/css/style.css') }}" rel="stylesheet">
