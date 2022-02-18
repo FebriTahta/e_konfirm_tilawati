@@ -162,17 +162,17 @@ class DiklatCont extends Controller
                         }
                     })
                         ->addColumn('kabupaten', function ($data) {
-                            // if ($data->kabupaten == null) {
-                            //     # code...
-                            //     return "-";
-                            // }else{
-                            //     return $data->kabupaten->nama;
-                            // }
-                            return "-";
+                            if ($data->kabupaten == null) {
+                                # code...
+                                return "-";
+                            }else{
+                                return $data->kabupaten->nama;
+                            }
+                            
                         })
                         ->addColumn('cabang', function ($data) {
-                            // return $data->pelatihan->cabang->name;
-                            return "-";
+                            return $data->pelatihan->cabang->name;
+                            
                         })
 
                         ->addColumn('status', function ($data) {
@@ -194,10 +194,7 @@ class DiklatCont extends Controller
                         
                         ->addColumn('action', function($data){
                             $actionBtn = ' <a style="width:50px" href="#" data-id="'.$data->id.'" data-toggle="modal" data-target="#hapusData" class="btn btn-sm btn-outline btn-danger "><i class="fa fa-close"></i></a>';
-                            if ($data->name !== null) {
-                                # code...
-                                $actionBtn .= ' <a style="width:50px" href="#" data-id="'.$data->id.'" data-name="'.$data->name.'" data-toggle="modal" data-target=".modal-acc" class="btn btn-sm btn-outline btn-success "><i class="fa fa-check"></i></a>';
-                            }
+                            $actionBtn .= ' <a style="width:50px" href="#" data-id="'.$data->id.'" data-name="'.$data->name.'" data-toggle="modal" data-target=".modal-acc" class="btn btn-sm btn-outline btn-success "><i class="fa fa-check"></i></a>';
                             
                             return $actionBtn;
                         })
