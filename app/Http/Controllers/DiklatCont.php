@@ -171,7 +171,8 @@ class DiklatCont extends Controller
                             return "-";
                         })
                         ->addColumn('cabang', function ($data) {
-                            return $data->pelatihan->cabang->name;
+                            // return $data->pelatihan->cabang->name;
+                            return "-";
                         })
 
                         ->addColumn('status', function ($data) {
