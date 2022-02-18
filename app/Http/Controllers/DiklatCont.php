@@ -123,38 +123,43 @@ class DiklatCont extends Controller
                             return '<span class="badge badge-danger">kosong</span>';
                         } else {
                             # code...
-                            if ($data->filepeserta !== null || $data->filepeserta->count() == null) {
+                            if ($data->filepeserta !== null) {
                                 # code...
                                 foreach ($data->filepeserta as $key => $value) {
                                     # code...
-                                    if ($value->status == 0) {
+                                    if ($value->registrasi !== null) {
                                         # code...
-                                        $x[] = 
-                                        '<a href="#" class="text-white badge" style="background-color: rgb(112, 150, 255)" data-toggle="modal" data-target="#modal_file"
-                                        data-file="https://registrasi.tilawatipusat.com/file_peserta/'.$value->file.'"
-                                        data-name="'.$data->name.'"
-                                        data-img_name="'.$value->registrasi->name.'"
-                                        data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
-                                    } elseif ($value->status == 1) {
-                                        # code...
-                                        $x[] = 
-                                        '<a href="#" class="text-white badge" style="background-color: red" data-toggle="modal" data-target="#modal_file"
-                                        data-file="https://registrasi.tilawatipusat.com/file_peserta/'.$value->file.'"
-                                        data-name="'.$data->name.'"
-                                        data-img_name="'.$value->registrasi->name.'"
-                                        data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
-                                    } else{
-                                        # code...
-                                        $x[] = 
-                                        '<a href="#" class="text-white badge" style="background-color: lightgreen" data-toggle="modal" data-target="#modal_file"
-                                        data-file="https://registrasi.tilawatipusat.com/file_peserta/'.$value->file.'"
-                                        data-name="'.$data->name.'"
-                                        data-img_name="'.$value->registrasi->name.'"
-                                        data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
+                                        if ($value->status == 0) {
+                                            # code...
+                                            $x[] = 
+                                            '<a href="#" class="text-white badge" style="background-color: rgb(112, 150, 255)" data-toggle="modal" data-target="#modal_file"
+                                            data-file="https://registrasi.tilawatipusat.com/file_peserta/'.$value->file.'"
+                                            data-name="'.$data->name.'"
+                                            data-img_name="'.$value->registrasi->name.'"
+                                            data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
+                                        } elseif ($value->status == 1) {
+                                            # code...
+                                            $x[] = 
+                                            '<a href="#" class="text-white badge" style="background-color: red" data-toggle="modal" data-target="#modal_file"
+                                            data-file="https://registrasi.tilawatipusat.com/file_peserta/'.$value->file.'"
+                                            data-name="'.$data->name.'"
+                                            data-img_name="'.$value->registrasi->name.'"
+                                            data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
+                                        } else{
+                                            # code...
+                                            $x[] = 
+                                            '<a href="#" class="text-white badge" style="background-color: lightgreen" data-toggle="modal" data-target="#modal_file"
+                                            data-file="https://registrasi.tilawatipusat.com/file_peserta/'.$value->file.'"
+                                            data-name="'.$data->name.'"
+                                            data-img_name="'.$value->registrasi->name.'"
+                                            data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
+                                        }
+                                        return implode(" - ", $x);
                                     }
+                                    
                                 
                                 }
-                                return implode(" - ", $x);
+                                
                             }else {
                                 # code...
                                 return '<span class="badge badge-danger">kosong</span>';
