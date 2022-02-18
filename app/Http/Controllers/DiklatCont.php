@@ -162,12 +162,13 @@ class DiklatCont extends Controller
                         }
                     })
                         ->addColumn('kabupaten', function ($data) {
-                            if ($data->kabupaten == null) {
-                                # code...
-                                return "-";
-                            }else{
-                                return $data->kabupaten->nama;
-                            }
+                            // if ($data->kabupaten == null) {
+                            //     # code...
+                            //     return "-";
+                            // }else{
+                            //     return $data->kabupaten->nama;
+                            // }
+                            return "-";
                         })
                         ->addColumn('cabang', function ($data) {
                             return $data->pelatihan->cabang->name;
