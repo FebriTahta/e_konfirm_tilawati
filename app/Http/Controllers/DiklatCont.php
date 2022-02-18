@@ -115,97 +115,97 @@ class DiklatCont extends Controller
         if(request()->ajax())
         {
             
-                $data   = Peserta::where('pelatihan_id',$pelatihan_id)->with('kabupaten')->with('pelatihan')->with('filepeserta')->with('cabang');
-                return DataTables::of($data)
-                    ->addColumn('registrasi', function ($data) {
-                        if ($data->filepeserta->count()==0) {
-                            # code...
-                            return '<span class="badge badge-danger">kosong</span>';
-                        } else {
-                            # code...
-                            if ($data->filepeserta !== null) {
-                                # code...
-                                foreach ($data->filepeserta as $key => $value) {
-                                    # code...
-                                    if ($value->status == 0) {
-                                        # code...
-                                        $x[] = 
-                                        '<a href="#" class="text-white badge" style="background-color: rgb(112, 150, 255)" data-toggle="modal" data-target="#modal_file"
-                                        data-file="https://registrasi.tilawatipusat.com/file_peserta/'.$value->file.'"
-                                        data-name="'.$data->name.'"
-                                        data-img_name="'.$value->registrasi->name.'"
-                                        data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
-                                    } elseif ($value->status == 1) {
-                                        # code...
-                                        $x[] = 
-                                        '<a href="#" class="text-white badge" style="background-color: red" data-toggle="modal" data-target="#modal_file"
-                                        data-file="https://registrasi.tilawatipusat.com/file_peserta/'.$value->file.'"
-                                        data-name="'.$data->name.'"
-                                        data-img_name="'.$value->registrasi->name.'"
-                                        data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
-                                    } else{
-                                        # code...
-                                        $x[] = 
-                                        '<a href="#" class="text-white badge" style="background-color: lightgreen" data-toggle="modal" data-target="#modal_file"
-                                        data-file="https://registrasi.tilawatipusat.com/file_peserta/'.$value->file.'"
-                                        data-name="'.$data->name.'"
-                                        data-img_name="'.$value->registrasi->name.'"
-                                        data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
-                                    }
+                // $data   = Peserta::where('pelatihan_id',$pelatihan_id)->with('kabupaten')->with('pelatihan')->with('filepeserta')->with('cabang');
+                // return DataTables::of($data)
+                //     ->addColumn('registrasi', function ($data) {
+                //         if ($data->filepeserta->count()==0) {
+                //             # code...
+                //             return '<span class="badge badge-danger">kosong</span>';
+                //         } else {
+                //             # code...
+                //             if ($data->filepeserta !== null) {
+                //                 # code...
+                //                 foreach ($data->filepeserta as $key => $value) {
+                //                     # code...
+                //                     if ($value->status == 0) {
+                //                         # code...
+                //                         $x[] = 
+                //                         '<a href="#" class="text-white badge" style="background-color: rgb(112, 150, 255)" data-toggle="modal" data-target="#modal_file"
+                //                         data-file="https://registrasi.tilawatipusat.com/file_peserta/'.$value->file.'"
+                //                         data-name="'.$data->name.'"
+                //                         data-img_name="'.$value->registrasi->name.'"
+                //                         data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
+                //                     } elseif ($value->status == 1) {
+                //                         # code...
+                //                         $x[] = 
+                //                         '<a href="#" class="text-white badge" style="background-color: red" data-toggle="modal" data-target="#modal_file"
+                //                         data-file="https://registrasi.tilawatipusat.com/file_peserta/'.$value->file.'"
+                //                         data-name="'.$data->name.'"
+                //                         data-img_name="'.$value->registrasi->name.'"
+                //                         data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
+                //                     } else{
+                //                         # code...
+                //                         $x[] = 
+                //                         '<a href="#" class="text-white badge" style="background-color: lightgreen" data-toggle="modal" data-target="#modal_file"
+                //                         data-file="https://registrasi.tilawatipusat.com/file_peserta/'.$value->file.'"
+                //                         data-name="'.$data->name.'"
+                //                         data-img_name="'.$value->registrasi->name.'"
+                //                         data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
+                //                     }
                                 
-                                }
-                                return implode(" - ", $x);
-                            }else {
-                                # code...
-                                return '<span class="badge badge-danger">kosong</span>';
-                            }
-                        }
-                    })
-                        ->addColumn('kabupaten', function ($data) {
-                            // if ($data->kabupaten == null) {
-                            //     # code...
-                            //     return "-";
-                            // }else{
-                            //     return $data->kabupaten->nama;
-                            // }
-                            return "-";
-                        })
-                        ->addColumn('cabang', function ($data) {
-                            // return $data->pelatihan->cabang->name;
-                            return "-";
-                        })
+                //                 }
+                //                 return implode(" - ", $x);
+                //             }else {
+                //                 # code...
+                //                 return '<span class="badge badge-danger">kosong</span>';
+                //             }
+                //         }
+                //     })
+                //         ->addColumn('kabupaten', function ($data) {
+                //             // if ($data->kabupaten == null) {
+                //             //     # code...
+                //             //     return "-";
+                //             // }else{
+                //             //     return $data->kabupaten->nama;
+                //             // }
+                //             return "-";
+                //         })
+                //         ->addColumn('cabang', function ($data) {
+                //             // return $data->pelatihan->cabang->name;
+                //             return "-";
+                //         })
 
-                        ->addColumn('status', function ($data) {
-                            if ($data->status == 0) {
-                                # code...
-                                $stat = '<span class="badge badge-warning">menunggu</span>';
-                                return $stat;
-                            }elseif ($data->status == 2) {
-                                # code...
-                                $stat = '<span class="badge badge-danger">ditolak</span>';
-                                return $stat;
-                            } 
-                            elseif ($data->status == 1) {
-                                # code...
-                                $stat = '<span class="badge badge-success">disetujui</span>';
-                                return $stat;
-                            } 
-                        })
+                //         ->addColumn('status', function ($data) {
+                //             if ($data->status == 0) {
+                //                 # code...
+                //                 $stat = '<span class="badge badge-warning">menunggu</span>';
+                //                 return $stat;
+                //             }elseif ($data->status == 2) {
+                //                 # code...
+                //                 $stat = '<span class="badge badge-danger">ditolak</span>';
+                //                 return $stat;
+                //             } 
+                //             elseif ($data->status == 1) {
+                //                 # code...
+                //                 $stat = '<span class="badge badge-success">disetujui</span>';
+                //                 return $stat;
+                //             } 
+                //         })
                         
-                        ->addColumn('action', function($data){
-                            $actionBtn = ' <a style="width:50px" href="#" data-id="'.$data->id.'" data-toggle="modal" data-target="#hapusData" class="btn btn-sm btn-outline btn-danger "><i class="fa fa-close"></i></a>';
-                            if ($data->name !== null) {
-                                # code...
-                                $actionBtn .= ' <a style="width:50px" href="#" data-id="'.$data->id.'" data-name="'.$data->name.'" data-toggle="modal" data-target=".modal-acc" class="btn btn-sm btn-outline btn-success "><i class="fa fa-check"></i></a>';
-                            }
+                //         ->addColumn('action', function($data){
+                //             $actionBtn = ' <a style="width:50px" href="#" data-id="'.$data->id.'" data-toggle="modal" data-target="#hapusData" class="btn btn-sm btn-outline btn-danger "><i class="fa fa-close"></i></a>';
+                //             if ($data->name !== null) {
+                //                 # code...
+                //                 $actionBtn .= ' <a style="width:50px" href="#" data-id="'.$data->id.'" data-name="'.$data->name.'" data-toggle="modal" data-target=".modal-acc" class="btn btn-sm btn-outline btn-success "><i class="fa fa-check"></i></a>';
+                //             }
                             
-                            return $actionBtn;
-                        })
-                        ->addColumn('no', function ($data) {
+                //             return $actionBtn;
+                //         })
+                //         ->addColumn('no', function ($data) {
                             
-                        })
-                ->rawColumns(['action','kabupaten','registrasi','status'])
-                ->make(true);
+                //         })
+                // ->rawColumns(['action','kabupaten','registrasi','status'])
+                // ->make(true);
         }
     }
 
