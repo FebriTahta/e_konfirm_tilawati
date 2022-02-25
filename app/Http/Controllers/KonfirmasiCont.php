@@ -5,6 +5,8 @@ use App\Models\Pelatihan;
 use App\Models\Peserta;
 use Carbon\Carbon;
 use DataTables;
+use Jobs;
+use App\Jobs\BroadcastWA;
 use Illuminate\Http\Request;
 
 class KonfirmasiCont extends Controller
@@ -292,5 +294,19 @@ class KonfirmasiCont extends Controller
                 ->rawColumns(['action','kabupaten','registrasi','status','program'])
                 ->make(true);
         }
+    }
+
+    public function broadcastWA(Request $request)
+    {
+        $pelatihan_id = $request->pelatihan_id;
+            // $this->dispatch(new QRJob($pelatihan_id));
+            $data = Peserta::where('pelatihan_id', $pelatihan_id)
+            ->chunk(1, function($pesertass) {
+                foreach ($pesertass as $value) {
+                    // apply some action to the chunked results here
+                    BroadcastWA::dispatch($value);
+                }
+            });
+        return response()->json($pelatihan_id,200);
     }
 }

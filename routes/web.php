@@ -38,7 +38,7 @@ Route::get('/data-peserta/{pelatihan_id}',[DiklatCont::class, 'data_peserta']);
 Route::get('/daftar-data-peserta/{pelatihan_id}',[DiklatCont::class, 'daftar_data_peserta']);
 
 //send message wa blas (semua peserta)
-
+Route::post('/broadcasr-wa',[KonfirmasiCont::class,'broadcastWA'])->name('wa.broadcast');
 
 //broadcast
 Route::get('/page-broadcast',[DiklatCont::class, 'page_broadcast'])->name('broadcast');
