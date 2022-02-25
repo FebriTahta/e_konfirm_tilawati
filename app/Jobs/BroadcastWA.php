@@ -39,10 +39,10 @@ class BroadcastWA implements ShouldQueue
                     *BAGI USTADZ / USTADZAH CALON PESERTA YANG BELUM BERGABUNG KEDALAM GROUP WA*
                     kami harapkan dapat bergabung pada link group berikut ini 
                     
-                    *'.$this->value->pelatihan->groupwa.'* 
+                    *LINK : '.$this->value->pelatihan->groupwa.'* 
                     
                     *simpan nomor ini untuk mengaktifkan link group diatas*
-                    Yang sudah bergabung tidak perlu masuk ke group tersebut. karena group tersebut adalah group kedua khusus untuk peserta yang belum bergabung di group pertama (group penuh)',
+                    group tersebut adalah group kedua khusus untuk peserta yang belum bergabung di group pertama (group penuh)',
                     'secret' => false, // or true
                     'priority' => false, // or true
                 ];
