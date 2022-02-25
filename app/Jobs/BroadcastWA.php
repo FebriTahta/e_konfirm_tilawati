@@ -34,10 +34,10 @@ class BroadcastWA implements ShouldQueue
                 $token = "dyr07JcBSmVsb1YrVBTB2A5zNKor0BZ9krv2WnQsjWHG1CRhSktdqazkfuOSY9qh";
                 $datas = [
                     'phone' => $this->value->telp,
-                    'message' => '*TILAWATI PUSAT - '.strtoupper($this->value->program->name).'*. *YTH. '.strtoupper($this->value->name).'*. Berkaitan dengan acara yang akan diselenggarakan.
+                    'message' => 'Berkaitan dengan acara yang akan diselenggarakan.
                     
                     *BAGI USTADZ / USTADZAH CALON PESERTA YANG BELUM BERGABUNG KEDALAM GROUP WA*
-                    kami harapkan dapat bergabung pada link group berikut ini 
+                    kami harapkan dapat bergabung pada link group berikut. 
                     
                     *LINK : '.$this->value->pelatihan->groupwa.'* 
                     
