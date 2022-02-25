@@ -37,7 +37,8 @@ class BroadcastWA implements ShouldQueue
                     'message' => '*TILAWATI PUSAT - '.strtoupper($this->value->program->name).'*. *YTH. '.strtoupper($this->value->name).'*. Berkaitan dengan acara yang akan diselenggarakan.
                     
                     *BAGI USTADZ / USTADZAH CALON PESERTA YANG BELUM BERGABUNG KEDALAM GROUP WA*
-                    kami harapkan dapat bergabung pada link group berikut ini' .$this->value->pelatihan->groupwa.' 
+                    kami harapkan dapat bergabung pada link group berikut ini ' 
+                    .$this->value->pelatihan->groupwa.' 
                     
                     Yang sudah bergabung tidak perlu masuk ke group tersebut. karena group tersebut adalah group kedua khusus untuk peserta yang belum bergabung di group pertama (group penuh)',
                     'secret' => false, // or true
