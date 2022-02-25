@@ -43,6 +43,9 @@
         </div>
         <div class="card">
             <div class="card-body">
+                <button class="btn btn-sm btn-outline-primary"> BROADCAST SEMUA PESERTA</button>
+            </div>
+            <div class="card-body">
                 <div class="auto-container">
                     <!-- Sec Title Two -->
                     <div class="table-responsive">
