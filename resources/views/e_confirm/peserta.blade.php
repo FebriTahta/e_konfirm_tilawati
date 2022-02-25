@@ -296,7 +296,7 @@
                 processData: false,
                 beforeSend: function() {
                     $('#btnbroadcast').attr('disabled', 'disabled');
-                    $('#btnbroadcast').val('Proses Data Ditolak');
+                    $('#btnbroadcast').val('Proses Broadcasting');
                 },
                 success: function(data) {
                     if (data.success) {
