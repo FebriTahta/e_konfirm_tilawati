@@ -42,11 +42,10 @@
             </div>
         </div>
         <div class="card">
-            <div class="card-body">
-                <button class="btn btn-sm btn-outline-primary"> BROADCAST SEMUA PESERTA</button>
-            </div>
+            
             <div class="card-body">
                 <div class="auto-container">
+                    <button class="btn btn-sm btn-outline-primary"> BROADCAST SEMUA PESERTA</button>
                     <!-- Sec Title Two -->
                     <div class="table-responsive">
                         <span class="sec-title-two">
