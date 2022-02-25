@@ -307,6 +307,11 @@ class KonfirmasiCont extends Controller
                     BroadcastWA::dispatch($value);
                 }
             });
-        return response()->json($pelatihan_id,200);
+            return response()->json(
+                [
+                  'success' => 'OKE!',
+                  'message' => 'OKE!'
+                ]
+            );
     }
 }
