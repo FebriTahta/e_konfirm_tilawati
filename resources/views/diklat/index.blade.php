@@ -46,7 +46,7 @@
                         <table id="data" class="table peserta table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%; ">
                             <thead style="text-transform: capitalize" class="text-success">
                                 <tr>
-                                    <th>no</th>
+                                    
                                     <th>id</th>
                                     <th>program</th>
                                     <th>tanggal</th>
@@ -402,11 +402,7 @@
                     url: "/data-diklat",
                 },
                 columns: [
-                    {data:'no',
-                        render: function (data, type, row, meta) {
-                            return meta.row + meta.settings._iDisplayStart + 1;
-                        }  
-                    },
+                    
                     {data:'id',name:'id'},
                     {data:'program',name:'program'},
                     {data:'tanggal',name:'tanggal'},
