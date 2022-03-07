@@ -24,41 +24,41 @@ class DiklatCont extends Controller
     {
         if(request()->ajax())
         {
-            // $data = Pelatihan::orderBy('tanggal','desc')->where('jenis','diklat')->where('cabang_id', 79)->get();
-            //         return DataTables::of($data)
-            //             ->addColumn('peserta', function($data){
-            //                 $data2 = Peserta::where('pelatihan_id',$data->id)->where('status',1)->get()->count();
-            //                 $data3 = Peserta::where('pelatihan_id',$data->id)->where('status',0)->get()->count();
-            //                 return '<a href="/data-peserta/'.$data->id.'">'.$data2.' Fix - '.$data3.' Menunggu Konfirmasi'.'</a>';
-            //             })
-            //             ->addColumn('cabang', function($data){
-            //                 return $data->cabang->name;
-            //             })
-            //             ->addColumn('program', function($data){
-            //                 return $data->program->name;
-            //             })
-            //             ->addColumn('tanggal', function($data){
-            //                 if ($data->sampai_tanggal !== null) {
-            //                     # code...
-            //                     return Carbon::parse($data->tanggal)->isoFormat('dddd, D MMMM Y').' - '.
-            //                     Carbon::parse($data->sampai_tanggal)->isoFormat('dddd, D MMMM Y');
-            //                 }else{
-            //                     return Carbon::parse($data->tanggal)->isoFormat('dddd, D MMMM Y');
-            //                 }
-            //             })
-            //             ->addColumn('action', function($data){
-            //                 if ($data->pendaftaran !== 'ditutup') {
-            //                     # buka code...
-            //                     $btn = '<button data-id="'.$data->id.'" class="btn btn-sm btn-info" data-toggle="modal" data-target="#modal-tutup"> BUKA </button>';
-            //                     return $btn;
-            //                 }else {
-            //                     # tutup code...
-            //                     $btn = '<button data-id="'.$data->id.'"  class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modal-buka"> TUTUP </button>';
-            //                     return $btn;
-            //                 }
-            //             })
-            //             ->rawColumns(['cabang','program','peserta','tanggal','action'])
-            //             ->make(true);
+            $data = Pelatihan::orderBy('tanggal','desc')->where('jenis','diklat')->where('cabang_id', 79)->get();
+                    return DataTables::of($data)
+                        ->addColumn('peserta', function($data){
+                            $data2 = Peserta::where('pelatihan_id',$data->id)->where('status',1)->get()->count();
+                            $data3 = Peserta::where('pelatihan_id',$data->id)->where('status',0)->get()->count();
+                            return '<a href="/data-peserta/'.$data->id.'">'.$data2.' Fix - '.$data3.' Menunggu Konfirmasi'.'</a>';
+                        })
+                        ->addColumn('cabang', function($data){
+                            return $data->cabang->name;
+                        })
+                        ->addColumn('program', function($data){
+                            return $data->program->name;
+                        })
+                        ->addColumn('tanggal', function($data){
+                            if ($data->sampai_tanggal !== null) {
+                                # code...
+                                return Carbon::parse($data->tanggal)->isoFormat('dddd, D MMMM Y').' - '.
+                                Carbon::parse($data->sampai_tanggal)->isoFormat('dddd, D MMMM Y');
+                            }else{
+                                return Carbon::parse($data->tanggal)->isoFormat('dddd, D MMMM Y');
+                            }
+                        })
+                        ->addColumn('action', function($data){
+                            if ($data->pendaftaran !== 'ditutup') {
+                                # buka code...
+                                $btn = '<button data-id="'.$data->id.'" class="btn btn-sm btn-info" data-toggle="modal" data-target="#modal-tutup"> BUKA </button>';
+                                return $btn;
+                            }else {
+                                # tutup code...
+                                $btn = '<button data-id="'.$data->id.'"  class="btn btn-sm btn-danger" data-toggle="modal" data-target="#modal-buka"> TUTUP </button>';
+                                return $btn;
+                            }
+                        })
+                        ->rawColumns(['cabang','program','peserta','tanggal','action'])
+                        ->make(true);
         }
     }
 
