@@ -36,7 +36,7 @@ class BroadcastWA implements ShouldQueue
                     'phone' => $this->value->telp,
                     'message' => 'Berkaitan dengan acara yang akan diselenggarakan.
                     
-                    *BAGI USTADZ / USTADZAH CALON PESERTA YANG BELUM BERGABUNG KEDALAM GROUP WA*
+                    *HANYA UNTUK USTADZ / USTADZAH CALON PESERTA YANG BELUM BERGABUNG KEDALAM GROUP WA*
                     kami harapkan dapat bergabung pada link group berikut. 
                     
                     *LINK : '.$this->value->pelatihan->groupwa.'* 
