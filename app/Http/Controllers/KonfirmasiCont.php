@@ -120,32 +120,38 @@ class KonfirmasiCont extends Controller
             if ($request->acc == 1) {
                 # code...
                 # send wa
+
                 $curl = curl_init();
-                $token = "dyr07JcBSmVsb1YrVBTB2A5zNKor0BZ9krv2WnQsjWHG1CRhSktdqazkfuOSY9qh";
-                $datas = [
-                    'phone' => $data->telp,
-                    'message' => '*TILAWATI PUSAT - '.strtoupper($data2->program->name).'*. 
-                    *Yth. '.strtoupper($data->name).'*. Pendaftaran anda telah kami terima, silahkan bergabung pada group whatsapp berikut ( '.$data2->groupwa.' )
-
-                    *CATATAN*
-                    Simpan nomor ini untuk mengaktifkan link group Whatsapp diatas.
-                    *PESAN INI TIDAK UNTUK DISEBAR LUASKAN*
-                    ',
-                    'secret' => false, // or true
-                    'priority' => false, // or true
+                $token = "ETDoFxrQu746dzPyu4V2PxH1LxW7GuYdV2fyxGtIoklIaOz3E0ymAvbSZqeamfRa";
+                $payload = [
+                    "data" => [
+                        [
+                            'phone' => $data->telp,
+                            'message' => '*TILAWATI PUSAT - '.strtoupper($data2->program->name).'*. 
+                            *Yth. '.strtoupper($data->name).'*. Pendaftaran anda telah kami terima, silahkan bergabung pada group whatsapp berikut ( '.$data2->groupwa.' )
+            
+                            *CATATAN*
+                            Simpan nomor ini untuk mengaktifkan link group Whatsapp diatas.
+                            *PESAN INI TIDAK UNTUK DISEBAR LUASKAN*',
+                            'secret' => false, // or true
+                            'retry' => false, // or true
+                            'isGroup' => false, // or true
+                        ]
+                    ]
                 ];
-
                 curl_setopt($curl, CURLOPT_HTTPHEADER,
                     array(
                         "Authorization: $token",
+                        "Content-Type: application/json"
                     )
                 );
                 curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
                 curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($datas));
-                curl_setopt($curl, CURLOPT_URL, "https://simo.wablas.com/api/send-message");
+                curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($payload) );
+                curl_setopt($curl, CURLOPT_URL, "https://solo.wablas.com/api/v2/send-message");
                 curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
                 curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+
                 $result = curl_exec($curl);
                 curl_close($curl);
                 //
@@ -157,35 +163,35 @@ class KonfirmasiCont extends Controller
                 );
             }else{
                 # send wa
-                $curl = curl_init();
-                $token = "dyr07JcBSmVsb1YrVBTB2A5zNKor0BZ9krv2WnQsjWHG1CRhSktdqazkfuOSY9qh";
-                $datas = [
-                    'phone' => $data->telp,
-                    'message' => '*TILAWATI PUSAT - '.strtoupper($data2->program->name).'*
-                    *Yth. '.strtoupper($data->name).'*. Maaf, Pendaftaran anda belum dapat kami terima karena :  
-                    *'.$alasan.'*.
+                // $curl = curl_init();
+                // $token = "dyr07JcBSmVsb1YrVBTB2A5zNKor0BZ9krv2WnQsjWHG1CRhSktdqazkfuOSY9qh";
+                // $datas = [
+                //     'phone' => $data->telp,
+                //     'message' => '*TILAWATI PUSAT - '.strtoupper($data2->program->name).'*
+                //     *Yth. '.strtoupper($data->name).'*. Maaf, Pendaftaran anda belum dapat kami terima karena :  
+                //     *'.$alasan.'*.
 
-                    Untuk melanjutkan pendaftaran bisa klik link dibawah ini.
-                    https://registrasi.tilawatipusat.com/'.$data2->slug.'
-                    ',
-                    'secret' => false, // or true
-                    'priority' => false, // or true
-                ];
+                //     Untuk melanjutkan pendaftaran bisa klik link dibawah ini.
+                //     https://registrasi.tilawatipusat.com/'.$data2->slug.'
+                //     ',
+                //     'secret' => false, // or true
+                //     'priority' => false, // or true
+                // ];
 
-                curl_setopt($curl, CURLOPT_HTTPHEADER,
-                    array(
-                        "Authorization: $token",
-                    )
-                );
-                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
-                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-                curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($datas));
-                curl_setopt($curl, CURLOPT_URL, "https://simo.wablas.com/api/send-message");
-                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
-                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+                // curl_setopt($curl, CURLOPT_HTTPHEADER,
+                //     array(
+                //         "Authorization: $token",
+                //     )
+                // );
+                // curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+                // curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                // curl_setopt($curl, CURLOPT_POSTFIELDS, http_build_query($datas));
+                // curl_setopt($curl, CURLOPT_URL, "https://simo.wablas.com/api/send-message");
+                // curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+                // curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
                 
-                $result = curl_exec($curl);
-                curl_close($curl);
+                // $result = curl_exec($curl);
+                // curl_close($curl);
                 
                 //hapus file di subdomain registrasi bagi yang datanya ditolak
                 // foreach ($data->filepeserta as $key => $value) {
@@ -193,6 +199,40 @@ class KonfirmasiCont extends Controller
                 //     File::delete('https://registrasi.tilawatipusat.com/file_peserta/'.$value->file.'');
                 // }
                 //hapus peserta bagi yang datanya ditolak agar bisa registrasi lagi
+                $curl = curl_init();
+                $token = "ETDoFxrQu746dzPyu4V2PxH1LxW7GuYdV2fyxGtIoklIaOz3E0ymAvbSZqeamfRa";
+                $payload = [
+                    "data" => [
+                        [
+                            'phone' => $data->telp,
+                            'message' => '*TILAWATI PUSAT - '.strtoupper($data2->program->name).'*
+                            *Yth. '.strtoupper($data->name).'*. Maaf, Pendaftaran anda belum dapat kami terima karena :  
+                            *'.$alasan.'*.
+            
+                            Untuk melanjutkan pendaftaran bisa klik link dibawah ini.
+                            https://registrasi.tilawatipusat.com/'.$data2->slug.'.',
+                            'secret' => false, // or true
+                            'retry' => false, // or true
+                            'isGroup' => false, // or true
+                        ]
+                    ]
+                ];
+                curl_setopt($curl, CURLOPT_HTTPHEADER,
+                    array(
+                        "Authorization: $token",
+                        "Content-Type: application/json"
+                    )
+                );
+                curl_setopt($curl, CURLOPT_CUSTOMREQUEST, "POST");
+                curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+                curl_setopt($curl, CURLOPT_POSTFIELDS, json_encode($payload) );
+                curl_setopt($curl, CURLOPT_URL, "https://solo.wablas.com/api/v2/send-message");
+                curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, 0);
+                curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, 0);
+
+                $result = curl_exec($curl);
+                curl_close($curl);
+
                 $data->delete();
 
                 return response()->json(
