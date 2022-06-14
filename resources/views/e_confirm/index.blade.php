@@ -13,12 +13,12 @@
 @section('content')
 
     <!--Daftar Diklat-->
-    {{-- <section class="faq-section">
+    <section class="faq-section">
 		<div class="pattern-layer" style="background-image: url({{ asset('tilawatipusat/landing/images/background/7.jpg') }})"></div>
 		<div class="auto-container">
 			<!-- Sec Title -->
 			<div class="sec-title centered">
-				<div class="title">Data Peserta Pendaftaran Baru</div>
+				<div class="title">Data Peserta Pendaftaran Baruh</div>
 				<h2>Konfirmasi data peserta baru berikut ini</h2>
 				<div class="separate"></div>
 			</div>
@@ -50,24 +50,11 @@
                 @endforeach
 			</div>
 		</div>
-	</section> --}}
+	</section>
     <!--End Daftar Diklat-->
 @endsection
 
 @section('script')
-<script src="{{ URL::asset('tilawatipusat/libs/datatables/datatables.min.js')}}"></script>
-    <script src="{{ URL::asset('tilawatipusat/libs/jszip/jszip.min.js')}}"></script>
-    <script src="{{ URL::asset('tilawatipusat/libs/pdfmake/pdfmake.min.js')}}"></script>
-
-    <!-- Datatable init js -->
-    <script src="{{ URL::asset('tilawatipusat/js/pages/datatables.init.js')}}"></script>
-
-    <!-- Toast -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
-	
 <script>
 	$(document).ready(function () {  
 		console.log('pindah ke : https://konfirmasi.nurulfalah.org');

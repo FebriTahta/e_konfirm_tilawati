@@ -31,7 +31,7 @@
             <!-- Sec Title -->
             <div class="sec-title centered">
                 <div class="title">Konfirmasi data peserta baru berikut ini</div>
-                <h2>Data Peserta Pendaftaran Baru</h2>
+                <h2>Data Peserta Pendaftaran Baruh</h2>
                 <div class="separate"></div>
             </div>
         </div>
