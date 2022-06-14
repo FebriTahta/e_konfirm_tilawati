@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     // return view('welcome');
-    return redirect()->away('http://konfirmasi.nurulfalah.org');
+    return redirect()->away('https://admin.nurulfalah.org/login');
 });
 
 //peserta
