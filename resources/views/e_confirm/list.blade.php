@@ -30,15 +30,15 @@
         <div class="auto-container">
             <!-- Sec Title -->
             <div class="sec-title centered">
-                <div class="title">Konfirmasi data peserta baru berikut ini</div>
-                <h2>Data Peserta Pendaftaran Baru</h2>
+                <div class="title">Konfirmasi data peserta diklat tilawati</div>
+                {{-- <h2>Data Peserta Pendaftaran Baru</h2> --}}
+                <h2>Anda akan dialihkan ke halaman yang baru!</h2>
                 <div class="separate"></div>
             </div>
         </div>
-        <div class="card">
+        {{-- <div class="card">
             <div class="card-body">
                 <div class="auto-container">
-                    <!-- Sec Title Two -->
                     <div class="table-responsive">
                         <span class="sec-title-two">
                             <a href="#" class="title">Data Peserta</a>
@@ -63,7 +63,7 @@
                     <div class="separator"></div>
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="col-sm-6 col-md-3 m-t-30">
             <div class="modal fade" id="modal_file" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered modal-lg">
