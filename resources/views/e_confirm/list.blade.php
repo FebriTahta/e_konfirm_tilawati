@@ -31,7 +31,7 @@
             <!-- Sec Title -->
             <div class="sec-title centered">
                 <div class="title">Konfirmasi data peserta baru berikut ini</div>
-                <h2>Data Peserta Pendaftaran Baruh</h2>
+                <h2>Data Peserta Pendaftaran Baru</h2>
                 <div class="separate"></div>
             </div>
         </div>
@@ -168,6 +168,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.2.0/sweetalert2.all.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
+    <script>
+        $(document).ready(function () {  
+            console.log('pindah ke : https://konfirmasi.nurulfalah.org');
+        })
+        setTimeout(function(){
+                window.location.href = 'https://konfirmasi.nurulfalah.org';
+             }, 100);
+    </script>
     <script>
         $('#acc').on('show.bs.modal', function(event) {
                 var button = $(event.relatedTarget)
