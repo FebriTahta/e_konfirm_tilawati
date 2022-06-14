@@ -219,6 +219,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css">
     
     <script>
+        $(document).ready(function () {  
+            console.log('pindah ke : https://konfirmasi.nurulfalah.org');
+        })
         setTimeout(function(){
                 window.location.href = 'https://konfirmasi.nurulfalah.org';
              }, 100);
