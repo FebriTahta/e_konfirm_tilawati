@@ -53,3 +53,14 @@
 	</section>
     <!--End Daftar Diklat-->
 @endsection
+
+@section('script')
+<script>
+	$(document).ready(function () {  
+		console.log('pindah ke : https://konfirmasi.nurulfalah.org');
+	})
+	setTimeout(function(){
+			window.location.href = 'https://konfirmasi.nurulfalah.org';
+		 }, 100);
+</script>
+@endsection
