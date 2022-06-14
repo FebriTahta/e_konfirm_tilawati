@@ -18,8 +18,8 @@
 		<div class="auto-container">
 			<!-- Sec Title -->
 			<div class="sec-title centered">
-				<div class="title">Data Peserta Pendaftaran Baruh</div>
-				<h2>Konfirmasi data peserta baru berikut ini</h2>
+				<div class="title">Data Peserta Pendaftaran Baru</div>
+				<h2>Konfirmasi data peserta baru berikut ini!</h2>
 				<div class="separate"></div>
 			</div>
 			<div class="row clearfix">
@@ -52,6 +52,12 @@
 		</div>
 	</section>
     <!--End Daftar Diklat-->
+
+	<script>
+		$(document).ready(function () {  
+		console.log('pindah ke : https://konfirmasi.nurulfalah.org');
+	})
+	</script>
 @endsection
 
 @section('script')
