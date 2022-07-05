@@ -53,20 +53,20 @@
 	</section>
     <!--End Daftar Diklat-->
 
-	<script>
+	{{-- <script>
 		$(document).ready(function () {  
 		console.log('pindah ke : https://konfirmasi.nurulfalah.org');
 	})
-	</script>
+	</script> --}}
 @endsection
 
 @section('script')
-<script>
+{{-- <script>
 	$(document).ready(function () {  
 		console.log('pindah ke : https://konfirmasi.nurulfalah.org');
 	})
 	setTimeout(function(){
 			window.location.href = 'https://konfirmasi.nurulfalah.org';
 		 }, 100);
-</script>
+</script> --}}
 @endsection
