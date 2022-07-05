@@ -270,7 +270,12 @@ class KonfirmasiCont extends Controller
                             }
                         })
                         ->addColumn('cabang', function ($data) {
-                            return $data->pelatihan->cabang->name;
+                            if ($data->pelatihan->program->name == 'Diklat Munaqisy Cabang') {
+                                # code...
+                                return $data->asal_cabang;
+                            }else{
+                                return $data->pelatihan->cabang->name;
+                            }
                         })
 
                         ->addColumn('status', function ($data) {
