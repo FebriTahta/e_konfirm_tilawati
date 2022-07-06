@@ -122,7 +122,7 @@ class KonfirmasiCont extends Controller
                 # send wa
 
                 $curl = curl_init();
-                $token = "PT1oylKCkNdvkvRY0aJkVqYoMP3fi1GXY32N5IeL6zA8NwCuWOgr0ZkkNqfuD65R";
+                $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
                 $payload = [
                     "data" => [
                         [
@@ -170,7 +170,7 @@ class KonfirmasiCont extends Controller
                 // }
                 //hapus peserta bagi yang datanya ditolak agar bisa registrasi lagi
                 $curl = curl_init();
-                $token = "PT1oylKCkNdvkvRY0aJkVqYoMP3fi1GXY32N5IeL6zA8NwCuWOgr0ZkkNqfuD65R";
+                $token = "ErPMCdWGNfhhYPrrGsTdTb1vLwUbIt35CQ2KlhffDobwUw8pgYX4TN5rDT4smiIc";
                 $payload = [
                     "data" => [
                         [
