@@ -131,7 +131,7 @@ class DiklatCont extends Controller
                                         # code...
                                         if ($value->status == 0) {
                                             # code...
-                                            $x = [];
+                                            $x[] = 
                                             '<a href="#" class="text-white badge" style="background-color: rgb(112, 150, 255)" data-toggle="modal" data-target="#modal_file"
                                             data-file="https://registrasi.nurulfalah.org/file_peserta/'.$value->file.'"
                                             data-name="'.$data->name.'"
@@ -139,7 +139,7 @@ class DiklatCont extends Controller
                                             data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
                                         } elseif ($value->status == 1) {
                                             # code...
-                                            $x = [];
+                                            $x[] = 
                                             '<a href="#" class="text-white badge" style="background-color: red" data-toggle="modal" data-target="#modal_file"
                                             data-file="https://registrasi.nurulfalah.org/file_peserta/'.$value->file.'"
                                             data-name="'.$data->name.'"
@@ -147,7 +147,7 @@ class DiklatCont extends Controller
                                             data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
                                         } else{
                                             # code...
-                                            $x = [];
+                                            $x[] = 
                                             '<a href="#" class="text-white badge" style="background-color: lightgreen" data-toggle="modal" data-target="#modal_file"
                                             data-file="https://registrasi.nurulfalah.org/file_peserta/'.$value->file.'"
                                             data-name="'.$data->name.'"
