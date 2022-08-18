@@ -117,55 +117,44 @@ class DiklatCont extends Controller
             
                 $data   = Peserta::where('pelatihan_id',$pelatihan_id)->with('kabupaten')->with('pelatihan')->with('filepeserta')->with('cabang');
                 return DataTables::of($data)
-                    ->addColumn('registrasi', function ($data) {
-                        if ($data->filepeserta->count()==0) {
+                ->addColumn('registrasi', function ($data) {
+                    if ($data->filepeserta->count()==0) {
+                        # code...
+                        return '<span class="badge badge-danger">kosong</span>';
+                    } else {
+                        # code...
+                        foreach ($data->filepeserta as $key => $value) {
                             # code...
-                            return '<span class="badge badge-danger">kosong</span>';
-                        } else {
-                            # code...
-                            if ($data->filepeserta !== null) {
+                            if ($value->status == 0) {
                                 # code...
-                                foreach ($data->filepeserta as $key => $value) {
-                                    # code...
-                                    if ($value->registrasi !== null) {
-                                        # code...
-                                        if ($value->status == 0) {
-                                            # code...
-                                            $x[] = 
-                                            '<a href="#" class="text-white badge" style="background-color: rgb(112, 150, 255)" data-toggle="modal" data-target="#modal_file"
-                                            data-file="https://registrasi.nurulfalah.org/file_peserta/'.$value->file.'"
-                                            data-name="'.$data->name.'"
-                                            data-img_name="'.$value->registrasi->name.'"
-                                            data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
-                                        } elseif ($value->status == 1) {
-                                            # code...
-                                            $x[] = 
-                                            '<a href="#" class="text-white badge" style="background-color: red" data-toggle="modal" data-target="#modal_file"
-                                            data-file="https://registrasi.nurulfalah.org/file_peserta/'.$value->file.'"
-                                            data-name="'.$data->name.'"
-                                            data-img_name="'.$value->registrasi->name.'"
-                                            data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
-                                        } else{
-                                            # code...
-                                            $x[] = 
-                                            '<a href="#" class="text-white badge" style="background-color: lightgreen" data-toggle="modal" data-target="#modal_file"
-                                            data-file="https://registrasi.nurulfalah.org/file_peserta/'.$value->file.'"
-                                            data-name="'.$data->name.'"
-                                            data-img_name="'.$value->registrasi->name.'"
-                                            data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
-                                        }
-                                        return implode(" - ", $x);
-                                    }
-                                    
-                                
-                                }
-                                
-                            }else {
+                                $x[] = 
+                                '<a href="#" class="text-white badge" style="background-color: rgb(112, 150, 255)" data-toggle="modal" data-target="#modal_file"
+                                data-file="https://registrasi.nurulfalah.org/file_peserta/'.$value->file.'"
+                                data-name="'.$data->name.'"
+                                data-img_name="'.$value->registrasi->name.'"
+                                data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
+                            } elseif ($value->status == 1) {
                                 # code...
-                                return '<span class="badge badge-danger">kosong</span>';
+                                $x[] = 
+                                '<a href="#" class="text-white badge" style="background-color: red" data-toggle="modal" data-target="#modal_file"
+                                data-file="https://registrasi.nurulfalah.org/file_peserta/'.$value->file.'"
+                                data-name="'.$data->name.'"
+                                data-img_name="'.$value->registrasi->name.'"
+                                data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
+                            } else{
+                                # code...
+                                $x[] = 
+                                '<a href="#" class="text-white badge" style="background-color: lightgreen" data-toggle="modal" data-target="#modal_file"
+                                data-file="https://registrasi.nurulfalah.org/file_peserta/'.$value->file.'"
+                                data-name="'.$data->name.'"
+                                data-img_name="'.$value->registrasi->name.'"
+                                data-jenis="'.$value->registrasi->jenis.'">'.$value->registrasi->name.'</a>';
                             }
+                        
                         }
-                    })
+                        return implode(" - ", $x);
+                    }
+                })
                         ->addColumn('kabupaten', function ($data) {
                             if ($data->kabupaten == null) {
                                 # code...
